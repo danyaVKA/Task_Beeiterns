@@ -1,0 +1,16 @@
+// если вы хотите использовать sass-переменные - удалите root
+
+:root {
+    --color-bg: #2b2c3a; // весь задний фон и вся страница в целом
+    --color-accent-1: #6b69f9; // кнопки
+    --color-accent-2: #6f6eff; // тег или что-то типа того
+    --color-accent-3: #ff4738; // индикатор крутости (много ботаешь)
+    --color-text: #ffffff;  // основной текст
+    --color-status: #24cb8d; // онлайн и может быть ховер кнопок
+    
+    // радиус границ
+    --btn-radius: 3px;
+
+    // transition
+    --transition: all 0.2s linear;
+}

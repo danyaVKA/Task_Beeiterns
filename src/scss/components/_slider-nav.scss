@@ -1,0 +1,38 @@
+.slider-nav {
+    display: flex;
+    align-items: center;
+
+    &__btn {
+        position: relative;
+        @include flex-all-center;
+
+        border-radius: 4px;
+        width: 30px;
+        height: 30px;
+        color: var(--color-text);
+        transition: var(--transition);
+        
+        svg {
+            display: block;
+            width: 30px;
+            height: 30px;
+            color: inherit;
+            fill: currentColor;
+            object-fit: cover;
+        }
+
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        &:hover {
+            color: var(--color-text);
+            // background-color: var(--color-accent-1);
+            background-color: var(--color-status);
+        }
+
+        &:active {
+            background-color: initial;
+        }
+    }
+}

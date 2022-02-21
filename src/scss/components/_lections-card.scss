@@ -1,0 +1,88 @@
+.card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+    width: 450px;
+    height: 420px;
+
+    background-color: rgba(#ffffff, 0.04);
+
+    &__header {
+        width: 450px;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    &__body {
+        padding: 16px 25px 15px 15px;
+        width: 255px;
+        height: 88px;
+    }
+
+    &__footer {
+        @include flex-all-sb;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgba(#D8D8D8, 0.1);
+        padding: 16px 15px 15px 15px;
+        width: 255px;
+        height: 62px;
+    }
+
+    &__poster-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 9px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 75%;
+        color: var(--color-text);
+    }
+
+    &__descr {
+        margin: 0;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 90%;
+        color: rgba(#ffffff, 0.5);
+    }
+
+    &__category {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 2;
+        border-radius: var(--btn-radius);
+        padding: 4px 6px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 100%;
+        color: var(--color-text);
+        background-color: var(--color-accent-1);
+    }
+
+    &__lection-date {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 77%;
+        color: var(--color-text);
+    }
+
+    &__btn {
+        border-radius: 4px;
+        padding: 9px 18px;
+
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 77%;
+        color: var(--color-text);
+    }
+    
+}

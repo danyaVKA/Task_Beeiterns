@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*::-webkit-scrollbar {
+    position: relative;
+    z-index: 10;
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: rgba(#ffffff, 0.1);
+    // border-style: inset;
+    border-radius:  3px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(#ffffff, 0.3);
+    border-radius: 3px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Jost", sans-serif;
+  font-weight: 400; 
+  background-color: var(--color-bg);;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+}
+
+.is-hidden {
+  display: none !important; // stylelint-disable-line declaration-no-important
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+    padding-top: 72px;
+    padding-left: 280px;
+    transition: var(--transition);
+    
+    @include middle-desktop {
+        padding-left: 0;
+    }
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 55px;
+
+    @include middle-desktop {
+        padding: 0 20px;
+    }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.btn {
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: var(--btn-radius);
+    padding: 8px 12px;
+
+    text-align: center;
+    color: var(--color-text);
+    user-select: none;
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    &--fill {
+        background-color: var(--color-accent-1);
+
+        &:hover {
+            background-color: var(--color-status);
+        }
+
+        &:active {
+            color: var(--color-text);
+            background-color: var(--color-accent-1);
+        }
+    }
+
+    &--fill-accent-2 {
+        background-color: var(--color-accent-2);
+    }
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 82%;
+    color: var(--color-text);
+    text-transform: uppercase;
+
+    &--center {
+        text-align: center;
+    }
+}
+
+.descr {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--color-light);
+    letter-spacing: 1px;
+
+    &--center {
+        text-align: center;
+    }
+
+    &--hero {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 118%;
+        color: rgba(#ffffff, 0.6);
+        letter-spacing: initial;
+    }
+}
+
+.navigation-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid transparent;
+    padding: 0 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: var(--color-text);
+    text-transform: uppercase;
+    background-image: none;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &--nest-lvl-1 {
+        
+        &::before {
+            content: "";
+            position: absolute;
+            top:17px;
+            right: 30px;
+            width: 10px;
+            height: 6px;
+            background-image: url("../img/link-arrow.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 10px 10px;
+            transform-origin: center;
+            transition: var(--transition);
+        }
+
+        &--active {
+            &::before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &--nest-lvl-2 {
+        padding-left: 50px;
+        color: rgba(#ffffff, 0.5);
+        text-transform: initial;
+
+        svg {
+            display: inline-block;
+            margin-right: 24px;
+            width: 18px;
+            height: 18px;
+            color: rgba(#ffffff, 0.5);
+            fill: currentColor;
+            transition: var(--transition);
+        }
+
+        &:hover {
+            svg {
+                color: var(--color-accent-2);
+                fill: currentColor;
+            }
+        }
+    }
+
+    &:hover {
+        border-left-color: var(--color-accent-2);
+        background-color: rgba(#ffffff, 0.03);
+        mix-blend-mode: normal;
+    }
+}

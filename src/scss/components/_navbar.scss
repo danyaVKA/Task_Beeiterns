@@ -1,0 +1,17 @@
+.navbar {
+    &__list-inner {
+        position: relative;
+        overflow: hidden;
+        max-height: 0;
+        transition: var(--transition);
+
+        &--active {
+            max-height: initial;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        transition: var(--transition);  
+    }
+}

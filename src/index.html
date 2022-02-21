@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        <meta name="theme-color" content="#111112">
+        <link rel="apple-touch-icon" sizes="200x200" href="./favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="42x42" href="./favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="26x26" href="./favicons/favicon-16x16.png">
+        <link rel="manifest" href="./favicons/site.webmanifest">
+        <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad6">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <title>Beeinterns Page</title>
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="site-container">
+            @include('partials/header.html')
+            @include('partials/sidebar.html')
+            <main class="main">
+                @include('partials/lections-section-base.html')
+                @include('partials/lections-section-pro.html')
+                @include('partials/lections-section-expert.html')
+            </main>
+            @include('partials/footer.html')
+        </div>
+        <script src="js/vendor.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

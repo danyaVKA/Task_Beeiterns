@@ -1,0 +1,252 @@
+.toolbar {
+    @include flex-all-sb;
+    width: 100%;
+    background-color: var(--color-bg);
+    transition: var(--transition);
+
+
+    @include middle-desktop {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        padding-top: 40px;
+        width: 280px;
+        min-height: calc(100vh - 72px);
+        background-color: hsl(236, 15%, 15%);
+        transform: translateX(100%);
+    }
+}
+
+.support {
+    &__list {
+        display: flex;
+        align-items: center;
+
+        @include middle-desktop {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 21px;             
+        }
+    
+        &:first-child {
+            margin-right: 26px;
+        }
+
+        @include middle-desktop {
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 0px;
+            }
+
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__btn {
+        padding: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 71%;
+        color: rgba(#ffffff, 0.6);
+        mix-blend-mode: normal;
+        transition: var(--transition);
+        
+        &:hover {
+            color: var(--color-text);
+        }
+
+        @include middle-desktop {
+            font-size: 16px;
+            line-height: 32px;
+        }
+    }
+}
+
+.achievements-counter {
+    margin-left: auto;
+    margin-right: 16px;
+
+    @include middle-desktop {
+        margin: 0 auto;
+    }
+
+    @include middle-desktop {
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        height: 40px;
+
+        @include middle-desktop {
+            flex-direction: column;
+            justify-content: center;
+            height: auto;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 13px;
+        }      
+        
+        @include middle-desktop {
+            margin: 0;
+            margin-bottom: 0px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__btn {
+        border-radius: 5px;
+        padding: 7px 9px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 77%;
+        color: var(--color-text);
+
+        background-color: rgba(#ffffff, 0.06);
+
+        @include middle-desktop {
+            font-size: 16px;
+            line-height: 32px;
+        }
+
+        &--hours-progress {
+            display: flex;
+            align-items: center;
+            padding: 3px 0;
+            padding-left: 3px;
+            padding-right: 9px;
+
+            @include middle-desktop {
+                padding: 7px 9px;
+            }
+
+            span:last-of-type {
+                margin-left: 4px;
+                font-size: 11px;
+                color: rgba(#ffffff, 0.6);
+            }
+        }
+    }
+
+    &__energy {
+        border-radius: var(--btn-radius);
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+        background-color: var(--color-accent-3);
+
+        background-image: url("../img/achievements-counter-energy-btn.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 7px 12px;
+
+        box-shadow: 0px 0px 12px rgba(255, 71, 56, 0.5);
+    }
+}
+
+.user-account {
+    display: flex;
+    align-items: center;
+
+    @include middle-desktop {
+        margin-bottom: 40px;
+    }
+
+    &__avatar {
+        margin-right: 13px;
+        width: 44px;
+        height: 44px;
+        overflow: hidden;
+    }
+
+    &__avatar-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        margin-right: 15px;
+    }
+
+    &__name {
+        margin-bottom: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 77%;
+        color: var(--color-text);
+
+        @include middle-desktop {
+            font-size: 16px;
+        }
+    }
+
+    &__online-status {
+        position: relative;
+        padding-left: 15px;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 77%;
+
+        color: rgba(#ffffff, 0.6);
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 50%;
+            border-radius: 100%;
+            width: 6px;
+            height: 6px;
+            background-color: rgba(#ffffff, 0.6);
+            transform: translateY(-50%);
+        }
+
+        &--active {
+            color: var(--color-status);
+
+            &::before {
+                background-color: var(--color-status);
+            }
+        }
+    }
+
+    &__subscribe {
+        align-self: flex-start;
+        margin-top: 5px;
+    }
+
+    &__subscribe-btn {
+        padding: 1px 9px;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 91%;
+        text-transform: uppercase;
+
+        @include middle-desktop {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 280px;
+    right: 0;
+    z-index: 50;
+    
+    width: calc(100% - 280px);
+    height: 72px;
+    background-color: var(--color-bg);
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(#d8d8d8, 0.1);
+    transition: var(--transition);
+
+    @include middle-desktop {
+        left: 0px;
+        width: calc(100%);
+    }
+
+    &__container {
+        @include flex-v-center;
+        width: 100%;
+        height: 100%;
+        padding-right: 45px;
+
+        @include middle-desktop {
+            justify-content: space-between;
+            padding-right: 20px;
+        }
+    }
+
+    &__sidebar-control {
+        display: none;
+
+        @include middle-desktop {
+            display: block;
+        }
+    }
+
+    &__logo-wrapper {
+        display: none;
+
+        @include middle-desktop {
+            display: block;
+        }
+    }
+
+    &__user-profile-control {
+        display: none;
+
+        @include middle-desktop {
+            display: block;
+        }
+    }
+
+    &__sidebar-btn {
+        position: relative;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 4px;
+            border-radius: 2px;
+            width: 90%;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 4px;
+            border-radius: 2px;
+            width: 90%;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 2px;
+            width: 90%;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            &::before,
+            &::after,
+            span {
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        &--active {
+            &::before,
+            &::after,
+            span {
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+
+    &__user-profile-btn {
+        border-color: rgba(255, 255, 255, 0.2);
+        padding: 6px 12px;
+        color: rgba(255, 255, 255, 0.2);
+        background-color: transparent;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.5);
+            background-color: transparent;
+        }
+
+        &--active {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+}

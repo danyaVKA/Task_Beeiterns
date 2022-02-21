@@ -1,0 +1,93 @@
+.lections-section {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 10px;
+
+    &__lvl {
+        display: block;
+        margin-bottom: 7px;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 16px;
+        color: rgba(#ffffff, 0.4);
+        text-transform: uppercase;
+        mix-blend-mode: normal;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    &__controls {
+        position: absolute;
+        top: 11px;
+        right: 55px;
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+
+        @include middle-desktop {
+            right: 20px;
+        }
+    }
+
+    &__btn {
+        margin-right: 20px;
+        padding: 6px 12px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 17px;
+        color: var(--color-text);
+    }
+
+    &__lection-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        @include tablet {
+            justify-content: center;
+        }
+
+        @include phone {
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+    }
+
+    &__lection-item {
+        margin-bottom: 10px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        @include tablet {
+            margin: 0;
+            margin-bottom: 25px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+
+            &:nth-child(odd) {
+                margin-right: 25px;
+            }
+        }
+
+        @include phone {
+            margin: 0;
+            
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+
+            &:nth-child(odd) {
+                margin-right: 0px;
+            }  
+        }
+    }
+}

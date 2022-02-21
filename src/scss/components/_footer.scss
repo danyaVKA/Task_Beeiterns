@@ -1,0 +1,110 @@
+.footer {
+    position: relative;
+    right: 0;
+    z-index: 2;
+    margin-left: auto;
+    margin-top: 50px;
+    border-top: 1px solid rgba(#d8d8d8, 0.1);
+    padding: 100px 0;
+    padding-bottom: 50px;
+    width: calc(100% - 280px);
+    transition: var(--transition);
+    
+    @include middle-desktop {
+        width: calc(100%);
+    }
+
+    @include tablet {
+        padding: 50px 0;
+    }
+    
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+                            "l l l l ab ab ab ab w w w w"
+                            "c c c c c c c c c c c c";
+        gap: 30px;
+
+        @include phone {
+            grid-template-rows: auto auto auto;
+            grid-template-areas: 
+                            "ab ab ab ab ab ab w w w w w w"
+                            "l l l l l l l l l l l l"
+                            "c c c c c c c c c c c c";
+        }
+
+        @include phone {
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas: 
+                            "ab ab ab ab ab ab ab ab ab ab ab ab"
+                            "w w w w w w w w w w w w"
+                            "l l l l l l l l l l l l"
+                            "c c c c c c c c c c c c";
+        }
+    }
+
+    &__logo {
+        grid-area: l;
+
+        @include phone {
+            justify-self: center;
+        }
+    }
+
+    &__about-us {
+        grid-area: ab;
+    }
+
+    &__work-with-us {
+        grid-area: w;
+    }
+
+    &__copyright {
+        grid-area: c;
+
+        @include phone {
+            justify-self: center;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        color: var(--color-text);
+        text-transform: initial;
+    }
+}
+
+.footer-list {
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__btn {
+        padding: 0;
+        width: 100%;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.6);
+        background-color: transparent;
+        
+        &:hover {
+            color: var(--color-text);
+        }
+
+        &:active {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+}
+
+.copyright {
+    &__text {
+        font-size: 12px;
+        color: var(--color-text);
+    }
+}
